@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     --white: #fff;
 
     --blue: #133e87;
+    --blue-light: #CBDCEB;
     --blue-dark: #113066;
   }
 
@@ -28,6 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: var(--background);
+    padding: 20px;
   }
 
   h1 {
