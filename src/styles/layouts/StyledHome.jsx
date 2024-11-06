@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import responsive from '../mixins/responsive'
+import { flexbox } from '../mixins/flexbox'
 
 export const BackgroundContainer = styled.div`
   height: 100vh;
@@ -9,10 +10,8 @@ export const BackgroundContainer = styled.div`
   background-repeat: no-repeat;
 `
 export const ButtonWrapper = styled.div`
-  display: flex;
+  ${flexbox()}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100vh;
   gap: 15px;
