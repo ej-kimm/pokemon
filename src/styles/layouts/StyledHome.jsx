@@ -2,21 +2,21 @@ import styled, { css } from 'styled-components'
 import responsive from '../mixins/responsive'
 import { flexbox } from '../mixins/flexbox'
 
-export const BackgroundContainer = styled.div`
+export const StyledBackgroundContainer = styled.div`
   height: 100vh;
   background-image: url(./pokemon_background.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 `
-export const ButtonWrapper = styled.div`
+export const StyledButtonWrapper = styled.div`
   ${flexbox()}
   flex-direction: column;
   width: 100%;
   height: 100vh;
   gap: 15px;
 `
-export const Logo = styled.img`
+export const StyledLogo = styled.img`
   display: block;
   width: 300px;
   height: auto;
@@ -28,7 +28,7 @@ export const Logo = styled.img`
     `
   )}
 `
-export const Button = styled.button`
+export const StyledButton = styled.button`
   font-size: 16px;
   padding: 12px 24px;
   background-color: var(--blue);
