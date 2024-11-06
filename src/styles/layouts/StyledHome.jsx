@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import responsive from '../mixins/responsive'
 
 export const BackgroundContainer = styled.div`
   height: 100vh;
@@ -18,18 +19,33 @@ export const ButtonWrapper = styled.div`
 `
 export const Logo = styled.img`
   display: block;
-  width: 700px;
+  width: 300px;
   height: auto;
+
+  ${responsive(
+    'T',
+    css`
+      width: 700px;
+    `
+  )}
 `
 export const Button = styled.button`
-  padding: 18px 36px;
+  font-size: 16px;
+  padding: 12px 24px;
   background-color: var(--blue);
   color: var(--white);
-  font-size: 25px;
   border-radius: 5px;
   transition: background-color 300ms ease-in-out;
 
   &:hover {
     background-color: var(--blue-dark);
   }
+
+  ${responsive(
+    'T',
+    css`
+      font-size: 25px;
+      padding: 18px 36px;
+    `
+  )}
 `
