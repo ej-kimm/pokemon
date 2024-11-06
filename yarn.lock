@@ -2909,6 +2909,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^6.27.0"
     styled-components: "npm:^6.1.13"
+    styled-normalize: "npm:^8.1.1"
     vite: "npm:^5.4.10"
   languageName: unknown
   linkType: soft
@@ -3490,6 +3491,15 @@ __metadata:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
   checksum: 10c0/dd0379179c6ce9655c97285e9f6475b533d4cc4cad72e8f16824c5454803a9d12126877d8b2837cd5b54520250c55cde97a183e813eed720d2575362d9646663
+  languageName: node
+  linkType: hard
+
+"styled-normalize@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "styled-normalize@npm:8.1.1"
+  peerDependencies:
+    styled-components: ^4.0.0 || ^5.0.0 || ^6.0.0
+  checksum: 10c0/16a9f6f452278f8f29939b145a099e06d221c342c3a6c51469d425e610757866c1dfd80d22c9cb91460c49ea79b1b5dd214c617b1d8a223de1ffb76b0f687e03
   languageName: node
   linkType: hard
 
