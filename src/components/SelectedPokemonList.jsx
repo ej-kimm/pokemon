@@ -1,16 +1,23 @@
 import React from 'react'
 import { StyledImageWrapper } from '../styles/components/StyledSelectedPokemonList'
-import PokeBallImage from './PokeBallImage'
 
 export default function SelectedPokemonList() {
+  const pokeballs = [
+    { src: './images/pokeball.png', alt: 'pokeball' },
+    { src: './images/pokeball.png', alt: 'pokeball' },
+    { src: './images/pokeball.png', alt: 'pokeball' },
+    { src: './images/pokeball.png', alt: 'pokeball' },
+    { src: './images/pokeball.png', alt: 'pokeball' },
+    { src: './images/pokeball.png', alt: 'pokeball' },
+  ]
+
   return (
     <StyledImageWrapper>
-      <PokeBallImage src={'./images/pokeball.png'} alt={'pokeball'} />
-      <PokeBallImage src={'./images/pokeball.png'} alt={'pokeball'} />
-      <PokeBallImage src={'./images/pokeball.png'} alt={'pokeball'} />
-      <PokeBallImage src={'./images/pokeball.png'} alt={'pokeball'} />
-      <PokeBallImage src={'./images/pokeball.png'} alt={'pokeball'} />
-      <PokeBallImage src={'./images/pokeball.png'} alt={'pokeball'} />
+      {pokeballs.map((pokeball, index) => (
+        <div key={index}>
+          <img src={pokeball.src} alt={pokeball.alt} />
+        </div>
+      ))}
     </StyledImageWrapper>
   )
 }
