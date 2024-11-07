@@ -15,6 +15,12 @@ export default function Dex() {
     })
   }
 
+  const handleRemovePokemon = (id) => {
+    setSelectedPokemonList(
+      selectedPokemonList.filter((pokemon) => pokemon.id !== id)
+    )
+  }
+
   useEffect(() => {
     fetch('data/pokemons.json')
       .then((res) => res.json())
@@ -23,7 +29,10 @@ export default function Dex() {
 
   return (
     <StyledDexLayout>
-      <Dashboard selectedPokemonList={selectedPokemonList} />
+      <Dashboard
+        selectedPokemonList={selectedPokemonList}
+        onRemovePokemon={handleRemovePokemon}
+      />
       <PokemonList pokemons={pokemons} onSelectPokemon={handleSelectPokemon} />
     </StyledDexLayout>
   )
