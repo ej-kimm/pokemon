@@ -3,7 +3,7 @@ import responsive from '../mixins/responsive'
 
 export const StyledPokemonListContainer = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   background-color: var(--beige);
   border-radius: 8px;
   padding: 20px;
