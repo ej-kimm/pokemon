@@ -37,7 +37,7 @@ export const StyledImageWrapper = styled.div`
   ${responsive(
     'D',
     css`
-      gap: 70px;
+      gap: 65px;
 
       & div {
         padding: 20px;

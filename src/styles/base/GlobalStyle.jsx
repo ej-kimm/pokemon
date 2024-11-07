@@ -29,7 +29,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: var(--background);
-    padding: 20px;
   }
 
   h1 {
