@@ -9,11 +9,20 @@ export const StyledDashboardContainer = styled.header`
   padding: 15px;
   background-color: var(--blue-light);
   border-radius: 8px;
+  margin-bottom: 15px;
 
   ${responsive(
     'T',
     css`
       padding: 30px;
+      margin-bottom: 20px;
+    `
+  )}
+
+  ${responsive(
+    'D',
+    css`
+      margin-bottom: 30px;
     `
   )}
 `

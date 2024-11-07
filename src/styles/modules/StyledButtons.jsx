@@ -18,8 +18,9 @@ export const StyledButton = styled.button`
   ${responsive(
     'T',
     css`
-      font-size: 25px;
-      padding: 18px 36px;
+      font-size: ${(props) => (props.size === 'large' ? '25px' : '20px')};
+      padding: ${(props) =>
+        props.size === 'large' ? '18px 36px' : '8px 15px'};
     `
   )}
 `
