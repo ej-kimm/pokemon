@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <StyledBackgroundContainer>
       <StyledButtonWrapper>
-        <StyledLogo src="./pokemon_logo.png" alt="pokemon_logo" />
+        <StyledLogo src="./images/pokemon_logo.png" alt="pokemon_logo" />
         <StyledButton type="button" onClick={() => navigate('/dex')}>
           포켓몬 도감 GO
         </StyledButton>
