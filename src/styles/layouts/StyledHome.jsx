@@ -28,23 +28,3 @@ export const StyledLogo = styled.img`
     `
   )}
 `
-export const StyledButton = styled.button`
-  font-size: 16px;
-  padding: 12px 24px;
-  background-color: var(--blue);
-  color: var(--white);
-  border-radius: 5px;
-  transition: background-color 300ms ease-in-out;
-
-  &:hover {
-    background-color: var(--blue-dark);
-  }
-
-  ${responsive(
-    'T',
-    css`
-      font-size: 25px;
-      padding: 18px 36px;
-    `
-  )}
-`

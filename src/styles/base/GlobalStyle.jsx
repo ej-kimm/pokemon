@@ -11,6 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     --blue: #133e87;
     --blue-light: #CBDCEB;
     --blue-dark: #113066;
+
+    --pink: #f86d7d;
+    --pink-dark: #ec5668;
   }
 
   * {
