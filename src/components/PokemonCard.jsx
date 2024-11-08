@@ -2,11 +2,13 @@ import { StyledPokemonCardBox } from '../styles/components/StyledPokemonCard'
 import { StyledButton } from '../styles/modules/StyledButtons'
 
 export default function PokemonCard({ pokemon, action, onSelect, onRemove }) {
-  const addPokemon = () => {
+  const addPokemon = (e) => {
+    e.preventDefault()
     onSelect(pokemon)
   }
 
-  const removePokemon = () => {
+  const removePokemon = (e) => {
+    e.preventDefault()
     onRemove(pokemon.id)
   }
 
