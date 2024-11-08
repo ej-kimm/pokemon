@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Dashboard from './../components/Dashboard'
 import PokemonList from './../components/PokemonList'
 import { StyledDexLayout } from './../styles/layouts/StyledDex'
 import ErrorAlert from '../styles/modules/ErrorAlert'
+import useFetch from '../hooks/useFetch'
 
 export default function Dex() {
-  const [pokemons, setPokemons] = useState([])
+  const [pokemons] = useFetch()
   const [selectedPokemonList, setSelectedPokemonList] = useState([])
   const [error, setError] = useState({ message: '', show: false })
 
@@ -31,12 +32,6 @@ export default function Dex() {
       selectedPokemonList.filter((pokemon) => pokemon.id !== id)
     )
   }
-
-  useEffect(() => {
-    fetch('data/pokemons.json')
-      .then((res) => res.json())
-      .then((data) => setPokemons(data))
-  }, [])
 
   return (
     <StyledDexLayout>
