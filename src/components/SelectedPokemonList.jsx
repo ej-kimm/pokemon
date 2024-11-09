@@ -4,6 +4,7 @@ import {
   StyledImageWrapper,
 } from '../styles/components/StyledSelectedPokemonList'
 import PokemonCard from './PokemonCard'
+import { Link } from 'react-router-dom'
 
 export default function SelectedPokemonList({ selectedPokemonList, onRemove }) {
   const defaultPokeball = {
@@ -14,12 +15,14 @@ export default function SelectedPokemonList({ selectedPokemonList, onRemove }) {
   return (
     <StyledImageWrapper>
       {selectedPokemonList.map((pokemon) => (
-        <PokemonCard
-          key={pokemon.id}
-          pokemon={pokemon}
-          onRemove={onRemove}
-          action="remove"
-        />
+        <Link to={`/pokemon/${pokemon.id}`} key={pokemon.id}>
+          <PokemonCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            onRemove={onRemove}
+            action="remove"
+          />
+        </Link>
       ))}
       {Array(6 - selectedPokemonList.length)
         .fill(defaultPokeball)
