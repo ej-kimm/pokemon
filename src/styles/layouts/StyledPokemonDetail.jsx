@@ -18,7 +18,9 @@ export const StyledPokemonCardBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 10px 10px 60px #bebebe, -10px -10px 60px #ffffff;
+  box-shadow: 10px 11px 61px 7px rgba(212, 207, 192, 0.77);
+  -webkit-box-shadow: 10px 11px 61px 7px rgba(212, 207, 192, 0.77);
+  -moz-box-shadow: 10px 11px 61px 7px rgba(212, 207, 192, 0.77);
 
   ${responsive(
     'T',
@@ -43,7 +45,7 @@ export const StyledBackground = styled.div`
   left: 5px;
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  z-index: 2;
+  z-index: 50;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(24px);
   border-radius: 10px;
@@ -53,7 +55,7 @@ export const StyledBackground = styled.div`
 
 export const StyledBlob = styled.div`
   position: absolute;
-  z-index: 1;
+  z-index: 40;
   top: 50%;
   left: 50%;
   width: 150px;
@@ -108,7 +110,7 @@ export const StyledBlob = styled.div`
 
 export const StyledContent = styled.div`
   position: relative;
-  z-index: 3;
+  z-index: 60;
   text-align: center;
   color: #333;
   padding: 20px;
