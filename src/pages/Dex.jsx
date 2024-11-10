@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Dashboard from './../components/Dashboard'
 import PokemonList from './../components/PokemonList'
 import { StyledDexLayout } from './../styles/layouts/StyledDex'
