@@ -1,15 +1,18 @@
+import { usePokemon } from '../context/PokemonContext'
 import { StyledPokemonCardBox } from '../styles/components/StyledPokemonCard'
 import { StyledButton } from '../styles/modules/StyledButtons'
 
-export default function PokemonCard({ pokemon, action, onSelect, onRemove }) {
-  const addPokemon = (e) => {
+export default function PokemonCard({ pokemon, action }) {
+  const { addPokemon, removePokemon } = usePokemon()
+
+  const handleAddButton = (e) => {
     e.preventDefault()
-    onSelect(pokemon)
+    addPokemon(pokemon)
   }
 
-  const removePokemon = (e) => {
+  const handleRemoveButton = (e) => {
     e.preventDefault()
-    onRemove(pokemon.id)
+    removePokemon(pokemon.id)
   }
 
   return (
@@ -29,7 +32,7 @@ export default function PokemonCard({ pokemon, action, onSelect, onRemove }) {
         type="button"
         action="select"
         size="small"
-        onClick={action === 'select' ? addPokemon : removePokemon}
+        onClick={action === 'select' ? handleAddButton : handleRemoveButton}
       >
         {action === 'select' ? '선택' : '삭제'}
       </StyledButton>
