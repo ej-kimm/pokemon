@@ -5,23 +5,20 @@ import {
 } from '../styles/components/StyledSelectedPokemonList'
 import PokemonCard from './PokemonCard'
 import { Link } from 'react-router-dom'
+import { usePokemon } from '../context/PokemonContext'
 
-export default function SelectedPokemonList({ selectedPokemonList, onRemove }) {
+export default function SelectedPokemonList() {
   const defaultPokeball = {
     src: './images/pokeball.png',
     alt: 'pokeball',
   }
+  const { selectedPokemonList } = usePokemon()
 
   return (
     <StyledImageWrapper>
       {selectedPokemonList.map((pokemon) => (
         <Link to={`/pokemon/${pokemon.id}`} key={pokemon.id}>
-          <PokemonCard
-            key={pokemon.id}
-            pokemon={pokemon}
-            onRemove={onRemove}
-            action="remove"
-          />
+          <PokemonCard key={pokemon.id} pokemon={pokemon} action="remove" />
         </Link>
       ))}
       {Array(6 - selectedPokemonList.length)

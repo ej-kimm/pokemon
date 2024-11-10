@@ -5,14 +5,11 @@ import {
 } from '../styles/layouts/StyledDashboard'
 import SelectedPokemonList from './SelectedPokemonList'
 
-export default function Dashboard({ selectedPokemonList, onRemovePokemon }) {
+export default function Dashboard() {
   return (
     <StyledDashboardContainer>
       <StyledTitle>나만의 포켓몬</StyledTitle>
-      <SelectedPokemonList
-        selectedPokemonList={selectedPokemonList}
-        onRemove={onRemovePokemon}
-      />
+      <SelectedPokemonList />
     </StyledDashboardContainer>
   )
 }
