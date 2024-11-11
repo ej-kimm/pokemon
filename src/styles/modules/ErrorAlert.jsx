@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import { setError } from '../../redux/slices/pokemonSlice'
+import { setError } from '../../redux/modules/pokemonSlice'
 
 const ErrorAlert = ({ message }) => {
   const dispatch = useDispatch()

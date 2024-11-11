@@ -166,3 +166,7 @@ export const StyledContent = styled.div`
     `
   )}
 `
+export const StyledButtonWrapper = styled.div`
+  ${flexbox()}
+  gap: 10px;
+`

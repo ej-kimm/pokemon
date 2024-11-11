@@ -1,4 +1,4 @@
-import { addPokemon, removePokemon } from '../redux/slices/pokemonSlice'
+import { addPokemon, removePokemon } from '../redux/modules/pokemonSlice'
 import { StyledPokemonCardBox } from '../styles/components/StyledPokemonCard'
 import { StyledButton } from '../styles/modules/StyledButtons'
 import { useDispatch } from 'react-redux'
