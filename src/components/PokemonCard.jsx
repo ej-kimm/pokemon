@@ -1,18 +1,19 @@
-import { usePokemon } from '../context/PokemonContext'
+import { addPokemon, removePokemon } from '../redux/slices/pokemonSlice'
 import { StyledPokemonCardBox } from '../styles/components/StyledPokemonCard'
 import { StyledButton } from '../styles/modules/StyledButtons'
+import { useDispatch } from 'react-redux'
 
 export default function PokemonCard({ pokemon, action }) {
-  const { addPokemon, removePokemon } = usePokemon()
+  const dispatch = useDispatch()
 
   const handleAddButton = (e) => {
     e.preventDefault()
-    addPokemon(pokemon)
+    dispatch(addPokemon(pokemon))
   }
 
   const handleRemoveButton = (e) => {
     e.preventDefault()
-    removePokemon(pokemon.id)
+    dispatch(removePokemon(pokemon.id))
   }
 
   return (

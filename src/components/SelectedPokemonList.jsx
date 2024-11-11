@@ -5,14 +5,14 @@ import {
 } from '../styles/components/StyledSelectedPokemonList'
 import PokemonCard from './PokemonCard'
 import { Link } from 'react-router-dom'
-import { usePokemon } from '../context/PokemonContext'
+import { useSelector } from 'react-redux'
 
 export default function SelectedPokemonList() {
+  const { selectedPokemonList } = useSelector((state) => state.pokemon)
   const defaultPokeball = {
     src: './images/pokeball.png',
     alt: 'pokeball',
   }
-  const { selectedPokemonList } = usePokemon()
 
   return (
     <StyledImageWrapper>
