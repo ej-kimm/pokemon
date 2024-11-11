@@ -9,10 +9,10 @@ import {
   StyledPokemonCardBox,
   StyledButtonWrapper,
 } from '../styles/layouts/StyledPokemonDetail'
-import { StyledButton } from '../styles/modules/StyledButtons'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addPokemon, removePokemon } from '../redux/modules/pokemonSlice'
+import Button from '../components/Button'
 
 export default function PokemonDetail() {
   const { id } = useParams()
@@ -44,16 +44,10 @@ export default function PokemonDetail() {
           <p>{(clickedPokemon.types || []).join(', ')}</p>
           <p>{clickedPokemon.description}</p>
           <StyledButtonWrapper>
-            <StyledButton type="button" size="small" onClick={handleGoBack}>
-              뒤로 가기
-            </StyledButton>
-            <StyledButton
-              type="button"
-              size="small"
-              onClick={handleButtonAction}
-            >
+            <Button onClick={handleGoBack}>뒤로 가기</Button>
+            <Button onClick={handleButtonAction}>
               {isPokemonSeleted ? '삭제' : '선택'}
-            </StyledButton>
+            </Button>
           </StyledButtonWrapper>
         </StyledContent>
       </StyledPokemonCardBox>

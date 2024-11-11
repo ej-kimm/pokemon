@@ -5,7 +5,7 @@ import {
   StyledButtonWrapper,
   StyledLogo,
 } from './../styles/layouts/StyledHome'
-import { StyledButton } from '../styles/modules/StyledButtons'
+import Button from '../components/Button'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -14,14 +14,9 @@ export default function Home() {
     <StyledBackgroundContainer>
       <StyledButtonWrapper>
         <StyledLogo src="./images/pokemon_logo.png" alt="pokemon_logo" />
-        <StyledButton
-          type="button"
-          action="start"
-          size="large"
-          onClick={() => navigate('/dex')}
-        >
+        <Button size="large" action="start" onClick={() => navigate('/dex')}>
           포켓몬 도감 GO
-        </StyledButton>
+        </Button>
       </StyledButtonWrapper>
     </StyledBackgroundContainer>
   )
