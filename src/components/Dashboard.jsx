@@ -4,15 +4,15 @@ import {
   StyledTitle,
 } from '../styles/layouts/StyledDashboard'
 import SelectedPokemonList from './SelectedPokemonList'
-import { usePokemon } from '../context/PokemonContext'
-import ErrorAlert from '../styles/modules/ErrorAlert'
+import { useSelector } from 'react-redux'
+import ErrorAlert from './../styles/modules/ErrorAlert'
 
 export default function Dashboard() {
-  const { error, setError } = usePokemon()
+  const { error } = useSelector((state) => state.pokemon)
 
   return (
     <StyledDashboardContainer>
-      {error.show && <ErrorAlert message={error.message} setError={setError} />}
+      {error.show && <ErrorAlert message={error.message} />}
       <StyledTitle>나만의 포켓몬</StyledTitle>
       <SelectedPokemonList />
     </StyledDashboardContainer>

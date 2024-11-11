@@ -1,18 +1,19 @@
-import { usePokemon } from '../context/PokemonContext'
+import { addPokemon, removePokemon } from '../redux/modules/pokemonSlice'
 import { StyledPokemonCardBox } from '../styles/components/StyledPokemonCard'
-import { StyledButton } from '../styles/modules/StyledButtons'
+import { useDispatch } from 'react-redux'
+import Button from './Button'
 
 export default function PokemonCard({ pokemon, action }) {
-  const { addPokemon, removePokemon } = usePokemon()
+  const dispatch = useDispatch()
 
   const handleAddButton = (e) => {
     e.preventDefault()
-    addPokemon(pokemon)
+    dispatch(addPokemon(pokemon))
   }
 
   const handleRemoveButton = (e) => {
     e.preventDefault()
-    removePokemon(pokemon.id)
+    dispatch(removePokemon(pokemon.id))
   }
 
   return (
@@ -22,14 +23,11 @@ export default function PokemonCard({ pokemon, action }) {
         <strong>{pokemon.korean_name}</strong>
         <p>{`No. ${String(pokemon.id).padStart(3, 0)}`}</p>
       </div>
-      <StyledButton
-        type="button"
-        action="select"
-        size="small"
+      <Button
         onClick={action === 'select' ? handleAddButton : handleRemoveButton}
       >
         {action === 'select' ? '선택' : '삭제'}
-      </StyledButton>
+      </Button>
     </StyledPokemonCardBox>
   )
 }

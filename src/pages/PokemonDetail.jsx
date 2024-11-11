@@ -7,19 +7,30 @@ import {
   StyledBlob,
   StyledContent,
   StyledPokemonCardBox,
+  StyledButtonWrapper,
 } from '../styles/layouts/StyledPokemonDetail'
-import { StyledButton } from '../styles/modules/StyledButtons'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { addPokemon, removePokemon } from '../redux/modules/pokemonSlice'
+import Button from '../components/Button'
 
 export default function PokemonDetail() {
   const { id } = useParams()
-  const {
-    clickedPokemon: { img_url, korean_name, types, description },
-  } = useFetch(id)
+  const { clickedPokemon } = useFetch(id)
+  const { selectedPokemonList } = useSelector((state) => state.pokemon)
+  const isPokemonSeleted = selectedPokemonList.find(
+    (pokemon) => pokemon.id === Number(id)
+  )
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const handleGoBack = () => {
     navigate(-1)
+  }
+  const handleButtonAction = () => {
+    isPokemonSeleted
+      ? dispatch(removePokemon(Number(id)))
+      : dispatch(addPokemon(clickedPokemon))
   }
 
   return (
@@ -28,13 +39,16 @@ export default function PokemonDetail() {
         <StyledBackground />
         <StyledBlob />
         <StyledContent>
-          <img src={img_url} alt={korean_name} />
-          <h2>{korean_name}</h2>
-          <p>{(types || []).join(', ')}</p>
-          <p>{description}</p>
-          <StyledButton type="button" size="small" onClick={handleGoBack}>
-            뒤로 가기
-          </StyledButton>
+          <img src={clickedPokemon.img_url} alt={clickedPokemon.korean_name} />
+          <h2>{clickedPokemon.korean_name}</h2>
+          <p>{(clickedPokemon.types || []).join(', ')}</p>
+          <p>{clickedPokemon.description}</p>
+          <StyledButtonWrapper>
+            <Button onClick={handleGoBack}>뒤로 가기</Button>
+            <Button onClick={handleButtonAction}>
+              {isPokemonSeleted ? '삭제' : '선택'}
+            </Button>
+          </StyledButtonWrapper>
         </StyledContent>
       </StyledPokemonCardBox>
     </StyledPokemonDetailContainer>

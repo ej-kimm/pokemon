@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { setError } from '../../redux/modules/pokemonSlice'
 
-const ErrorAlert = ({ message, setError }) => {
+const ErrorAlert = ({ message }) => {
+  const dispatch = useDispatch()
+
   useEffect(() => {
     if (!message) return
 
     const timer = setTimeout(() => {
-      setError((prev) => ({ ...prev, show: false }))
+      dispatch(setError({ message: '', show: false }))
     }, 3000)
 
     return () => clearTimeout(timer)
-  }, [message, setError])
+  }, [message])
 
   return (
     <StyledWrapper>
