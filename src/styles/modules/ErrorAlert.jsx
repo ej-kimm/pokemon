@@ -43,7 +43,6 @@ const StyledWrapper = styled.div`
     width: 320px;
     padding: 12px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: start;
     position: fixed;

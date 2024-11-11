@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { flexbox } from '../mixins/flexbox'
 import responsive from '../mixins/responsive'
+import { blobBounce } from '../animations/animations'
 
 export const StyledPokemonDetailContainer = styled.div`
   ${flexbox()}
@@ -64,29 +65,7 @@ export const StyledBlob = styled.div`
   background-color: var(--pink);
   opacity: 1;
   filter: blur(12px);
-  animation: blob-bounce 5s infinite ease;
-
-  @keyframes blob-bounce {
-    0% {
-      transform: translate(-100%, -100%) translate3d(0, -30%, 0);
-    }
-
-    25% {
-      transform: translate(-100%, -100%) translate3d(100%, -30%, 0);
-    }
-
-    50% {
-      transform: translate(-100%, -100%) translate3d(100%, 130%, 0);
-    }
-
-    75% {
-      transform: translate(-100%, -100%) translate3d(0, 130%, 0);
-    }
-
-    100% {
-      transform: translate(-100%, -100%) translate3d(0, -30%, 0);
-    }
-  }
+  animation: ${blobBounce} 5s infinite ease;
 
   ${responsive(
     'T',
