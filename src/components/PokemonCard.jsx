@@ -20,13 +20,7 @@ export default function PokemonCard({ pokemon, action }) {
       <img src={pokemon.img_url} alt={pokemon.korean_name} />
       <div>
         <strong>{pokemon.korean_name}</strong>
-        {pokemon.id < 10 ? (
-          <p>No. 00{pokemon.id}</p>
-        ) : pokemon.id < 100 ? (
-          <p>No. 0{pokemon.id}</p>
-        ) : (
-          <p>No. {pokemon.id}</p>
-        )}
+        <p>{`No. ${String(pokemon.id).padStart(3, 0)}`}</p>
       </div>
       <StyledButton
         type="button"
