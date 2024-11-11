@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import responsive from '../mixins/responsive'
 import { flexbox } from '../mixins/flexbox'
+import { jelloVertical } from '../animations/animations'
 
 export const StyledBackgroundContainer = styled.div`
   height: 100vh;
@@ -9,6 +10,7 @@ export const StyledBackgroundContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 `
+
 export const StyledButtonWrapper = styled.div`
   ${flexbox()}
   flex-direction: column;
@@ -16,10 +18,15 @@ export const StyledButtonWrapper = styled.div`
   height: 100vh;
   gap: 15px;
 `
+
 export const StyledLogo = styled.img`
   display: block;
   width: 300px;
   height: auto;
+
+  &:hover {
+    animation: ${jelloVertical} 1200ms both;
+  }
 
   ${responsive(
     'T',
